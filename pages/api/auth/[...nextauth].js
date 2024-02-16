@@ -40,5 +40,9 @@ export default NextAuth({
   ],
   session: {
     jwt: true,
+    async session(session, user) {
+      session.user.email = user.email;
+      return session;
+    },
   },
 });

@@ -16,8 +16,8 @@ const handler = async (req, res) => {
   }
 
   const userEmail = session.user.email;
-  const oldPassword = req.body.oldPassword;
-  const newPassword = req.body.newPassword;
+
+  const { oldPassword, newPassword } = req.body;
 
   const client = await connectToDatabase();
 

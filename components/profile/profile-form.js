@@ -2,7 +2,7 @@ import { useRef } from "react";
 
 import classes from "./profile-form.module.css";
 
-function ProfileForm(props) {
+function ProfileForm({ onChangePassword }) {
   const oldPasswordRef = useRef();
   const newPasswordRef = useRef();
 
@@ -13,7 +13,7 @@ function ProfileForm(props) {
     const enteredNewPassword = newPasswordRef.current.value;
 
     // * here could be input validation
-    props.onChangePassword({
+    onChangePassword({
       oldPassword: enteredOldPassword,
       newPassword: enteredNewPassword,
     });
