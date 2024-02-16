@@ -1,9 +1,10 @@
-import Layout from "@/components/layout/layout";
 import { SessionProvider } from "next-auth/react";
 
-function MyApp({ Component, pageProps: { session, ...pageProps } }) {
+import Layout from "@/components/layout/layout";
+
+function MyApp({ Component, pageProps }) {
   return (
-    <SessionProvider session={session} refetchInterval={5 * 60}>
+    <SessionProvider session={pageProps.session}>
       <Layout>
         <Component {...pageProps} />
       </Layout>
